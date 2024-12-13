@@ -1,0 +1,66 @@
+<main class="flex flex-row">
+
+  <section>
+    <app-search />
+  </section>
+
+  <section>
+    <app-refresh-data />
+  </section>
+
+  <section class="flex-3 flex flex-row" [class.avatar-selected]="!menuClosed" #divUser>
+    <div>
+      <p-avatar
+        [label]="getUserInitials(user().name)"
+        styleClass="mr-2"
+        size="large"
+        shape="circle" />
+    </div>
+    <div class="flex flex-col justify-center">
+      <div class="flex gap-3" style="cursor: pointer" (click)="menuClosed = !menuClosed">
+        <span class="user-name">{{ user().name }}</span>
+        <span style="align-content: end">
+          <i class="pi" [class.pi-chevron-down]="menuClosed" [class.pi-chevron-up]="!menuClosed"></i>
+        </span>
+      </div>
+      <div class="dealer-name mt-1">
+        {{setDealer()?.name}}
+      </div>
+    </div>
+    <p-overlay
+      [appendTo]="divUser"
+      [visible]="!menuClosed"
+    >
+      <div class="overlay-box mr-1">
+        <div class="flex flex-col gap-5" style="padding: 14px 14px 0 14px;">
+          <div>
+            <i class="pi pi-building mr-2"></i>
+            {{ 'HEADER.DEALERSHIP_MENU.CHANGE_DEALERSHIP' |  translate }}
+          </div>
+          @for (dealer of user().dealers; track dealer.reference) {
+            <div>
+              <input
+                type="radio"
+                name="dealers"
+                [value]="dealer.reference"
+                [id]="dealer.reference"
+                [checked]="setDealer()?.reference === dealer.reference"
+                (click)="onDealerSelected(dealer)"
+              />
+              <label [for]="dealer.reference" class="ml-2">
+                {{ dealer.name }}
+              </label>
+            </div>
+          }
+        </div>
+        <div>
+          <p-divider/>
+        </div>
+        <div style="padding: 0 14px 14px 14px; cursor: pointer;" (click)="signOut()">
+          <i class="pi pi-sign-out mr-2"></i>
+          {{ 'HEADER.DEALERSHIP_MENU.LOGOUT' |  translate }}
+        </div>
+      </div>
+    </p-overlay>
+  </section>
+</main>
