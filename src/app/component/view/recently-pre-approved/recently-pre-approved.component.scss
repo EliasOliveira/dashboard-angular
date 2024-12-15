@@ -13,7 +13,7 @@ main {
     }
 
     .item-2 {
-      @include set-font(16px, 600, $mma-p-orange);
+      @include set-font(16px, 600, $primaryColor);
 
       i {
         @include set-font(10px, 800);

@@ -5,13 +5,15 @@ import {Router} from "@angular/router";
 import {TranslateModule} from "@ngx-translate/core";
 
 import {HttpClient} from "@angular/common/http";
+import {CardModule} from "primeng/card";
 
 @Component({
   selector: 'app-login',
   standalone: true,
   imports: [
     ButtonModule,
-    TranslateModule
+    TranslateModule,
+    CardModule
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'

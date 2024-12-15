@@ -14,7 +14,7 @@
   }
 
   .upload-document-button {
-    @include set-font(16px, 600, $mma-p-orange);
+    @include set-font(16px, 600, $mma-p-green);
 
     i {
       @include set-font(10px, 800);

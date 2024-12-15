@@ -58,6 +58,34 @@ p-dialog {
   }
 }
 
+// Pages
+
+app-login {
+
+
+  .login {
+    @apply flex flex-col;
+    justify-content: center;
+    margin-top: 25vh;
+
+    .login-card {
+      @apply flex flex-col gap-8;
+      height: 20rem;
+      width: 20rem;
+      background-color: $mma-v-black60;
+      opacity: 80%;
+      border-radius: $borderRadius;
+    }
+
+  }
+
+}
+
+
+
+// OLD
+
+
 app-upload-document-modal {
   p-dialog {
 
@@ -87,20 +115,20 @@ app-upload-document-modal {
       .p-fileupload-content {
         min-height: 20rem;
         min-width: 40rem;
-        border: 2px dashed $mma-v-orange50;
+        border: 2px dashed $mma-v-green50;
         border-radius: 10px;
         padding: 0;
       }
 
       .p-fileupload-content:not(.p-fileupload-highlight) {
-        background-color: $mma-v-orange10;
+        background-color: $mma-v-green10;
       }
 
     }
 
     .upload-modal-documents-icon {
       font-size: 7rem;
-      color: $mma-p-orange;
+      color: $mma-p-green;
     }
 
     .flex.flex-col .item-3 {
@@ -182,7 +210,7 @@ app-upload-document-modal {
     .item-1 {
       i {
         font-size: 2rem;
-        color: $mma-p-orange;
+        color: $mma-p-green;
       }
     }
 
@@ -231,7 +259,7 @@ app-upload-document {
     }
 
     .upload-document-button {
-      @include set-font(16px, 600, $mma-p-orange);
+      @include set-font(16px, 600, $mma-p-green);
 
       i {
         @include set-font(10px, 800);
@@ -510,8 +538,8 @@ app-active-contracts {
 
       .invalid-date {
         @apply cursor-pointer;
-        background-color: $mma-v-orange10;
-        color: $mma-p-orange;
+        background-color: $mma-v-green10;
+        color: $mma-p-green;
         font-weight: bold;
       }
 

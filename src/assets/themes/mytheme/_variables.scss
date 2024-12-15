@@ -3,15 +3,15 @@ $mma-font-family-bold: Graphie-Bold, sans-serif;
 
 $mma-p-white: #FFFFFF;
 $mma-p-black: #000000;
-$mma-p-orange: #F84300;
+$mma-p-green: #1d5b21;
 
 $mma-s-blue: #C3EFFF;
 $mma-s-light-gray: #D9D9D6;
 
-$mma-v-orange50: #FBA180;
-$mma-v-orange25: #FAD3C9;
-$mma-v-orange15: #FEE3D9;
-$mma-v-orange10: #FDEEEA;
+$mma-v-green50: #429b46;
+$mma-v-green25: #9fcea1;
+$mma-v-green15: #FEE3D9;
+$mma-v-green10: #e0ece1;
 
 $mma-v-blue50: #DFEFFA;
 $mma-v-blue25: #EFF7FC;
@@ -46,10 +46,10 @@ $mma-r-border-radius: 0px $mma-border-radius $mma-border-radius 0px;
 $mma-btn-radius: 6px;
 
 // Theme Specific Variables
-$primaryColor: $mma-p-orange;
-$primaryDarkColor: $mma-v-orange50;
-$primaryDarkerColor: $mma-v-orange25;
-$primaryTextColor: $mma-v-orange10;
+$primaryColor: $mma-p-green;
+$primaryDarkColor: $mma-v-green50;
+$primaryDarkerColor: $mma-v-green25;
+$primaryTextColor: $mma-v-green10;
 
 $colors: (
     "blue": $mma-st-blue,
@@ -115,5 +115,5 @@ $colors: (
     --highlight-bg: #{$highlightBg};
     --highlight-text-color: #{$highlightTextColor};
     --focus-ring: #{$focusShadow};
-    color-scheme: light;
+    color-scheme: dark;
 }

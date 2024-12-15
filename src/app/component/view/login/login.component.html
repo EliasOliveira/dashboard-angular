@@ -1,26 +1,24 @@
-<main xmlns="http://www.w3.org/1999/html">
-  <section class="section-l flex flex-col">
-    <div class="flex" style="flex-grow: 0.8">
-      <img class="logo-white" src="assets/images/logo_white.svg" alt="logo white">
-    </div>
-    <div class="flex">
-      <div class="flex flex-col fs-div">
-        <img class="horizontal-orange-bar" src="assets/images/horizontal_orange_bar.svg" alt="Horizontal Bar">
-        <span class="fs-text">{{ 'PAGES.LOGIN.LINE_1' | translate }} <br>{{ 'PAGES.LOGIN.LINE_2' | translate }} </span>
+<main>
+  <section class="login">
+      <div class="login-card flex flex-col gap-8">
+          <span class="login-text">{{ 'PAGES.LOGIN.LOGIN_TEXT' | translate }}</span>
+          <p-button label="{{ 'PAGES.LOGIN.LOGIN_BUTTON' | translate }}" (click)="signIn()" [style]="{}"/>
       </div>
-    </div>
+      <div class="login-card flex flex-col gap-8">
+          <span class="login-text">{{ 'PAGES.LOGIN.LOGIN_TEXT' | translate }}</span>
+          <p-button label="{{ 'PAGES.LOGIN.LOGIN_BUTTON' | translate }}" (click)="signIn()" [style]="{}"/>
+      </div>
   </section>
-  <section class="section-login-btn">
-    <div class="flex flex-col login">
-      <span class="login-text">{{ 'PAGES.LOGIN.LOGIN_TEXT' | translate }}</span>
-      <p-button label="{{ 'PAGES.LOGIN.LOGIN_BUTTON' | translate }}" (click)="signIn()" [style]="{width: '100%', 'font-family': 'Inter, sans-serif', 'font-size': '12px'}"/>
-      <div class="flex flex-col items-center gap-5" style="margin-top: 10rem;">
-        <span class="powered-by">{{ 'PAGES.LOGIN.POWERED_BY' | translate }}</span>
-        <img src="assets/images/WeLeaf.png" style="width: 220px" alt="Weleaf logo">
-      </div>
-      <div class="flex flex-col items-center gap-5" style="margin-top: 10rem;">
-        <span class="version">{{ appVersion }}</span>
-      </div>
-    </div>
-  </section>
+<!--  <section class="section-login-btn">-->
+<!--    <div class="flex flex-col login">-->
+<!--   -->
+<!--      <div class="flex flex-col items-center gap-5" style="margin-top: 10rem;">-->
+<!--        <span class="powered-by">{{ 'PAGES.LOGIN.POWERED_BY' | translate }}</span>-->
+<!--        <img src="assets/images/WeLeaf.png" style="width: 220px" alt="Weleaf logo">-->
+<!--      </div>-->
+<!--      <div class="flex flex-col items-center gap-5" style="margin-top: 10rem;">-->
+<!--        <span class="version">{{ appVersion }}</span>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </section>-->
 </main>
