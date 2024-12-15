@@ -6,6 +6,10 @@ import {TranslateModule} from "@ngx-translate/core";
 
 import {HttpClient} from "@angular/common/http";
 import {CardModule} from "primeng/card";
+import {IconFieldModule} from "primeng/iconfield";
+import {InputIconModule} from "primeng/inputicon";
+import {InputTextModule} from "primeng/inputtext";
+import {PaginatorModule} from "primeng/paginator";
 
 @Component({
   selector: 'app-login',
@@ -13,7 +17,11 @@ import {CardModule} from "primeng/card";
   imports: [
     ButtonModule,
     TranslateModule,
-    CardModule
+    CardModule,
+    IconFieldModule,
+    InputIconModule,
+    InputTextModule,
+    PaginatorModule
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
@@ -21,6 +29,10 @@ import {CardModule} from "primeng/card";
 export class LoginComponent {
 
   appVersion = ""
+
+  user = ''
+  pass = ''
+
   constructor(router: Router, http: HttpClient) {
 
     http.get('assets/version.json', {})

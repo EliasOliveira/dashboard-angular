@@ -1,27 +1,5 @@
 @use '../assets/themes/mytheme/variables' as *;
 
 main {
-
   @apply flex flex-row;
-
-  .sidebar-section {
-    @apply flex flex-row justify-center;
-    box-shadow: 0 2px 12px 0 #0000001A;
-    position: relative;
-    padding-top: 1.5rem;
-    width: 220px;
-  }
-
-  .main-section {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    background-color: $mma-bg-color;
-
-    .header {
-      background-color: $mma-p-white;
-      padding: 1rem;
-      border-bottom: 1px solid $mma-v-blue50;
-    }
-  }
 }

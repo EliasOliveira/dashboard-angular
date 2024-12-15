@@ -19,9 +19,10 @@
   },
   "PAGES": {
     "LOGIN": {
-      "LOGIN_TEXT": "Enter in matrix!",
+      "LOGIN_TEXT": "Enter the Matrix!",
       "LOGIN_BUTTON": "Log in",
-      "POWERED_BY": "Powered by"
+      "USER": "User email",
+      "PASS": "Password"
     },
     "DASHBOARD": {
       "TITLE": "Dashboard",

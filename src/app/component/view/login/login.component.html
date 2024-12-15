@@ -2,11 +2,35 @@
   <section class="login">
       <div class="login-card flex flex-col gap-8">
           <span class="login-text">{{ 'PAGES.LOGIN.LOGIN_TEXT' | translate }}</span>
-          <p-button label="{{ 'PAGES.LOGIN.LOGIN_BUTTON' | translate }}" (click)="signIn()" [style]="{}"/>
-      </div>
-      <div class="login-card flex flex-col gap-8">
-          <span class="login-text">{{ 'PAGES.LOGIN.LOGIN_TEXT' | translate }}</span>
-          <p-button label="{{ 'PAGES.LOGIN.LOGIN_BUTTON' | translate }}" (click)="signIn()" [style]="{}"/>
+          <div class="form">
+              <p-iconField iconPosition="left" class="ml-auto">
+                  <p-inputIcon><i class="pi pi-user"></i></p-inputIcon>
+                  <input pInputText
+                          type="text"
+                          [(ngModel)]="user"
+                          placeholder="{{ 'PAGES.LOGIN.USER' | translate }}" />
+              </p-iconField>
+              <p-iconField iconPosition="left" class="ml-auto">
+                  <p-inputIcon><i class="pi pi-key"></i></p-inputIcon>
+                  <input pInputText
+                          type="text"
+                          [(ngModel)]="pass"
+                          placeholder="{{ 'PAGES.LOGIN.PASS' | translate }}" />
+              </p-iconField>
+          </div>
+          <div class="actions">
+              <p-button label="{{ 'PAGES.LOGIN.LOGIN_BUTTON' | translate }}" (click)="signIn()"/>
+              <p-button (click)="signIn()">
+                  <p-inputIcon>
+                      <img src="assets/images/login_google.svg" style="width: 10px" alt="Login with google">
+                  </p-inputIcon>
+              </p-button>
+              <p-button (click)="signIn()">
+                  <p-inputIcon>
+                      <img src="assets/images/login_apple.svg" style="width: 10px" alt="Login with google">
+                  </p-inputIcon>
+              </p-button>
+          </div>
       </div>
   </section>
 <!--  <section class="section-login-btn">-->

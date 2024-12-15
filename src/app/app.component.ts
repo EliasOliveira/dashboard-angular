@@ -46,7 +46,7 @@ export class AppComponent {
     //     router.navigate(['']).then()
     //   }
     // })
-    this.creditRetailStore.getCreditApplications(service)
+    // this.creditRetailStore.getCreditApplications(service)
 
     // this.router.events.subscribe((event) => {
     //   if (event instanceof NavigationEnd) {

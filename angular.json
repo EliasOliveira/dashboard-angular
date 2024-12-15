@@ -29,7 +29,6 @@
               "src/favicon.ico",
               "src/assets",
               "src/.htaccess",
-              "src/config",
               "src/app/auth"
             ],
             "styles": [

@@ -62,19 +62,40 @@ p-dialog {
 
 app-login {
 
+  @apply flex;
+  align-items: center;
+  justify-content: center;
 
   .login {
     @apply flex flex-col;
+    align-items: center;
     justify-content: center;
-    margin-top: 25vh;
 
     .login-card {
       @apply flex flex-col gap-8;
+      align-items: center;
+      justify-content: center;
+
       height: 20rem;
       width: 20rem;
       background-color: $mma-v-black60;
-      opacity: 80%;
+      opacity: 95%;
       border-radius: $borderRadius;
+
+      .login-text {
+        font-size: 2rem;
+        font-family: $mma-font-family-bold;
+        font-weight: 700;
+        line-height: 48px;
+      }
+
+      .form {
+        @apply flex flex-col gap-3;
+      }
+
+      .actions {
+        @apply flex flex-row gap-3;
+      }
     }
 
   }
