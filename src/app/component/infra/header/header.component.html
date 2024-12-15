@@ -1,10 +1,7 @@
 <main class="flex flex-row">
 
   <section class="flex-3 flex flex-row" [class.avatar-selected]="!menuClosed" #divUser>
-      <div style="padding: 0 14px 14px 14px; cursor: pointer;" (click)="signOut()">
-          <i class="pi pi-sign-out mr-2"></i>
-          {{ 'HEADER.DEALERSHIP_MENU.LOGOUT' |  translate }}
-      </div>
+
     <div>
       <p-avatar
         [label]="getUserInitials(user().name)"
@@ -27,32 +24,12 @@
       [appendTo]="divUser"
       [visible]="!menuClosed"
     >
-      <div class="overlay-box mr-1">
-        <div class="flex flex-col gap-5" style="padding: 14px 14px 0 14px;">
-          <div>
-            <i class="pi pi-building mr-2"></i>
-            {{ 'HEADER.DEALERSHIP_MENU.CHANGE_DEALERSHIP' |  translate }}
-          </div>
-          @for (dealer of user().dealers; track dealer.reference) {
-            <div>
-              <input
-                type="radio"
-                name="dealers"
-                [value]="dealer.reference"
-                [id]="dealer.reference"
-                [checked]="setDealer()?.reference === dealer.reference"
-                (click)="onDealerSelected(dealer)"
-              />
-              <label [for]="dealer.reference" class="ml-2">
-                {{ dealer.name }}
-              </label>
-            </div>
-          }
-        </div>
-        <div>
-          <p-divider/>
-        </div>
-
+      <div class="overlay-box">
+          <p-button severity="info" (click)="signOut()" label="{{ 'HEADER.DEALERSHIP_MENU.LOGOUT' |  translate }}">
+              <p-inputIcon>
+                  <i class="pi pi-sign-out mr-2"></i>
+              </p-inputIcon>
+          </p-button>
       </div>
     </p-overlay>
   </section>

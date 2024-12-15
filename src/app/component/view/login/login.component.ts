@@ -35,26 +35,22 @@ import {
 })
 export class LoginComponent {
 
-  appVersion = ""
-
   user = ''
   pass = ''
 
-  firestore: Firestore = inject(Firestore);
   angularFireAuth = inject(Auth);
 
 
-  constructor(router: Router,
-              http: HttpClient) {
-
-
+  constructor(router: Router) {
+    this.angularFireAuth.onAuthStateChanged((user) => {
+      if (user) router.navigate(['/protected/dashboard']).then()
+    })
   }
 
 
   async signIn(): Promise<void> {
     try {
-      const userCredential = await signInWithEmailAndPassword(this.angularFireAuth, this.user, this.pass);
-      console.log("userCredential", userCredential)
+      await signInWithEmailAndPassword(this.angularFireAuth, this.user, this.pass);
     } catch (error: any) {
       const errorCode = error.code;
       const errorMessage = error.message;
@@ -64,13 +60,16 @@ export class LoginComponent {
 
   async signInWithGoogle(): Promise<void> {
     try {
-      const userCredential = await signInWithPopup(this.angularFireAuth, new GoogleAuthProvider())
-      console.log("userCredential", userCredential)
+      await signInWithPopup(this.angularFireAuth, new GoogleAuthProvider())
     } catch (error: any) {
       const errorCode = error.code;
       const errorMessage = error.message;
       throw new Error(`Error occured: ${errorCode} - ${errorMessage}`);
     }
+  }
+
+  async signInWithApple() {
+    throw new Error('Not implemented');
   }
 
 }

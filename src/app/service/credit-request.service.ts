@@ -32,14 +32,14 @@ export class CreditRequestService {
 
   getCreditRequests = async (): Promise<CreditRequestState[]> => {
     const result: CreditRequestState[] = []
-    const creditApplicationResponse = await firstValueFrom(this.creditRetailService.getCreditApplicationByStatusApi(activeStates.join(',')))
-    for (const creditApplication of creditApplicationResponse.creditApplications) {
-      const creditApplicationId = creditApplication.creditApplicationId?? ""
-      result.push({
-        creditApplicationId,
-        creditApplication
-      })
-    }
+    // const creditApplicationResponse = await firstValueFrom(this.creditRetailService.getCreditApplicationByStatusApi(activeStates.join(',')))
+    // for (const creditApplication of creditApplicationResponse.creditApplications) {
+    //   const creditApplicationId = creditApplication.creditApplicationId?? ""
+    //   result.push({
+    //     creditApplicationId,
+    //     creditApplication
+    //   })
+    // }
     return result;
   }
 

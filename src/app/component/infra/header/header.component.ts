@@ -12,6 +12,8 @@ import {getUserInitials} from "../../functions";
 import {UserStore} from "../../../store/user/UserState";
 import {TranslateModule} from "@ngx-translate/core";
 import {Auth} from "@angular/fire/auth";
+import {Router} from "@angular/router";
+import {InputIconModule} from "primeng/inputicon";
 
 @Component({
   selector: 'app-header',
@@ -24,7 +26,8 @@ import {Auth} from "@angular/fire/auth";
         DividerModule,
         RadioButtonModule,
         FormsModule,
-        TranslateModule
+        TranslateModule,
+        InputIconModule
     ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
@@ -39,18 +42,15 @@ export class HeaderComponent {
   protected user = this.userStore.user
     angularFireAuth = inject(Auth);
 
-  constructor(@Inject(DOCUMENT) private document: Document) {}
-
-  ngOnInit() {
-
-  }
+  constructor(@Inject(DOCUMENT) private document: Document, private router: Router) {}
 
   @ViewChild('divUser') divUser?: ElementRef;
 
 
 
   async signOut() {
-      return this.angularFireAuth.signOut()
+      await this.angularFireAuth.signOut()
+      return this.router.navigate(['/'])
   }
 
   onDealerSelected(dealer: Dealer) {

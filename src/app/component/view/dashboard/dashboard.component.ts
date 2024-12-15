@@ -69,25 +69,25 @@ export class DashboardComponent {
   constructor(private router: Router,
               private translateService: TranslateService,
               private creditRequestService: CreditRequestService) {
-    setTimeout(() => {
-      const isInitialized = this.creditRequests().length > 0
-      if (!isInitialized) {
-        this.creditRetailStore.getCreditApplications(this.creditRequestService)
-      }
-    }, 1000)
-    toObservable(this.creditRequestsState).subscribe(next => {
-      this.deliveries = mapCreditRequestStateToDelivery(this.creditRetailStore.findPendingContracts(), next)
-      mapCreditRetailResponseToStatusOverviewRequests(next, this.translateService).then(res => this.statusOverview.requests = res)
-    })
-
-    toObservable(this.creditRetailStore.findPendingContracts).subscribe(next => {
-      if (next) {
-        this.deliveries = mapCreditRequestStateToDelivery(next, this.creditRequestsState())
-        mapCreditRetailResponseToStatusOverviewContracts(next, this.translateService).then(
-          res => this.statusOverview.contracts = res
-        )
-      }
-    })
+    // setTimeout(() => {
+    //   const isInitialized = this.creditRequests().length > 0
+    //   if (!isInitialized) {
+    //     this.creditRetailStore.getCreditApplications(this.creditRequestService)
+    //   }
+    // }, 1000)
+    // toObservable(this.creditRequestsState).subscribe(next => {
+    //   this.deliveries = mapCreditRequestStateToDelivery(this.creditRetailStore.findPendingContracts(), next)
+    //   mapCreditRetailResponseToStatusOverviewRequests(next, this.translateService).then(res => this.statusOverview.requests = res)
+    // })
+    //
+    // toObservable(this.creditRetailStore.findPendingContracts).subscribe(next => {
+    //   if (next) {
+    //     this.deliveries = mapCreditRequestStateToDelivery(next, this.creditRequestsState())
+    //     mapCreditRetailResponseToStatusOverviewContracts(next, this.translateService).then(
+    //       res => this.statusOverview.contracts = res
+    //     )
+    //   }
+    // })
   }
 
   handleCreditRequestListComponentEvents(event: CreditRequestListComponentEvent) {
