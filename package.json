@@ -7,7 +7,8 @@
     "ng": "ng",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "ng serve",
-    "start:proxy": "ng serve --proxy-config src/proxy.conf.js"
+    "start:proxy": "ng serve --proxy-config src/proxy.conf.js",
+    "deploy": "firebase deploy"
   },
   "repository": {
     "type": "git",
