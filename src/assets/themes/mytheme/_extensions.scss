@@ -60,6 +60,18 @@ p-dialog {
 
 // Pages
 
+app-root {
+  main {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    @apply flex flex-row;
+    .main-section {
+      @apply flex flex-col;
+      flex-grow: 1;
+    }
+  }
+}
+
 app-login {
 
   @apply flex;
@@ -102,6 +114,35 @@ app-login {
 
 }
 
+
+app-dashboard {
+
+  main {
+    @apply flex flex-row flex-wrap gap-2;
+    justify-content: space-between;
+
+    section {
+      min-height: 30vh;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      flex-grow: 0;
+    }
+
+    .chart-size-1 {
+      flex-grow: 1;
+    }
+
+    .chart-size-2 {
+      flex-grow: 2;
+    }
+
+    .chart-size-3 {
+      flex-grow: 3
+    }
+
+  }
+
+}
 
 
 // OLD

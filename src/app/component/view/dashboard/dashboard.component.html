@@ -6,34 +6,23 @@
     class="mt-2"
   />
 }
-<main class="flex flex-col gap-5">
-  <section class="flex flex-row justify-between mt-8 mb-5">
-    <span class="title">{{'PAGES.DASHBOARD.TITLE' | translate}}</span>
-    <app-view-requests />
-  </section>
-  <section class="flex flex-row gap-5">
-    <div class="item-1">
-      <app-welcome-banner/>
-      <app-recently-pre-approved/>
-      <p-card header="{{'PAGES.COMPONENTS.LIST.DASHBOARD.TITTLE' | translate}}">
-        <app-credit-request-list [creditRequests]="creditRequests()" (onEventSend)="handleCreditRequestListComponentEvents($event)" />
-      </p-card>
-    </div>
-    <div class="item-2 mb-10">
-      <p-card header="Status overview">
-        <div class="flex flex-col gap-3">
-          <app-status-overview
-            [title]="statusOverview.requests.title"
-            [items]="statusOverview.requests.items"/>
-
-          <app-status-overview
-            [title]="statusOverview.contracts.title"
-            [items]="statusOverview.contracts.items"/>
-        </div>
-      </p-card>
-      <p-card header="Vehicles ready for delivery">
-        <app-ready-for-delivery [deliveries]="deliveries"/>
-      </p-card>
-    </div>
-  </section>
+<main>
+    <section>
+        <app-basic-chart-example />
+    </section>
+    <section>
+        <app-doughnut-chart-example />
+    </section>
+    <section>
+        <app-pie-chart-example />
+    </section>
+    <section>
+        <app-polar-area-chart-example />
+    </section>
+    <section class="chart-size-3"  >
+        <app-line-chart-example />
+    </section>
+    <section class="chart-size-3">
+        <app-vertical-bar-chart-example />
+    </section>
 </main>

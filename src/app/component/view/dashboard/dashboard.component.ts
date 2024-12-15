@@ -29,6 +29,20 @@ import {
 import {UploadDocumentEventType} from "../../shared/upload-document/upload-document.component";
 import {MessageType} from "../../../service/app-message.service";
 import {CreditRequestService} from "../../../service/credit-request.service";
+import {
+  BasicChartExampleComponent
+} from "../../shared/dashboard/charts/basic-chart-example/basic-chart-example.component";
+import {
+  DoughnutChartExampleComponent
+} from "../../shared/dashboard/charts/doughnut-chart-example/doughnut-chart-example.component";
+import {LineChartExampleComponent} from "../../shared/dashboard/charts/line-chart-example/line-chart-example.component";
+import {PieChartExampleComponent} from "../../shared/dashboard/charts/pie-chart-example/pie-chart-example.component";
+import {
+  PolarAreaChartExampleComponent
+} from "../../shared/dashboard/charts/polar-area-chart-example/polar-area-chart-example.component";
+import {
+  VerticalBarChartExampleComponent
+} from "../../shared/dashboard/charts/vertical-bar-chart-example/vertical-bar-chart-example.component";
 
 @Component({
   selector: 'app-dashboard',
@@ -42,7 +56,13 @@ import {CreditRequestService} from "../../../service/credit-request.service";
     StatusOverviewComponent,
     ReadyForDeliveryComponent,
     TranslateModule,
-    ConfirmationModalComponent
+    ConfirmationModalComponent,
+    BasicChartExampleComponent,
+    DoughnutChartExampleComponent,
+    LineChartExampleComponent,
+    PieChartExampleComponent,
+    PolarAreaChartExampleComponent,
+    VerticalBarChartExampleComponent
   ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
