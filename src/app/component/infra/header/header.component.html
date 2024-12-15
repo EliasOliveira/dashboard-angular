@@ -1,14 +1,10 @@
 <main class="flex flex-row">
 
-  <section>
-    <app-search />
-  </section>
-
-  <section>
-    <app-refresh-data />
-  </section>
-
   <section class="flex-3 flex flex-row" [class.avatar-selected]="!menuClosed" #divUser>
+      <div style="padding: 0 14px 14px 14px; cursor: pointer;" (click)="signOut()">
+          <i class="pi pi-sign-out mr-2"></i>
+          {{ 'HEADER.DEALERSHIP_MENU.LOGOUT' |  translate }}
+      </div>
     <div>
       <p-avatar
         [label]="getUserInitials(user().name)"
@@ -56,10 +52,7 @@
         <div>
           <p-divider/>
         </div>
-        <div style="padding: 0 14px 14px 14px; cursor: pointer;" (click)="signOut()">
-          <i class="pi pi-sign-out mr-2"></i>
-          {{ 'HEADER.DEALERSHIP_MENU.LOGOUT' |  translate }}
-        </div>
+
       </div>
     </p-overlay>
   </section>

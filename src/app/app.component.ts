@@ -10,6 +10,9 @@ import {AppMessageService} from "./service/app-message.service";
 import {Message, MessageService} from "primeng/api";
 import {MessagesModule} from "primeng/messages";
 import {TranslateService} from "@ngx-translate/core";
+import {Auth} from "@angular/fire/auth";
+import {Observable} from "rxjs";
+
 
 @Component({
   selector: 'app-root',
@@ -32,6 +35,8 @@ export class AppComponent {
 
   isAuthenticated = false;
 
+  angularFireAuth = inject(Auth);
+
   constructor(private router: Router,
               service: CreditRequestService,
               private viewportScroller: ViewportScroller,
@@ -39,6 +44,11 @@ export class AppComponent {
               public appMessageService: AppMessageService,
               ) {
     translate.setDefaultLang('en');
+
+    this.angularFireAuth.onAuthStateChanged(next => {
+      this.isAuthenticated = !!next?.uid
+    })
+
 
     appMessageService.getMessages().subscribe(messages => this.messages = messages)
     // this.isAuthenticated$.subscribe(isAuthenticated => {
@@ -54,6 +64,7 @@ export class AppComponent {
     //   }
     // });
   }
+
 
   // isAuthenticated$ = this.oktaStateService.authState$.pipe(
   //   filter((s: AuthState) => !!s),

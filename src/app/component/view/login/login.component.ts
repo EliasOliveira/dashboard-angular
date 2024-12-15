@@ -10,6 +10,13 @@ import {IconFieldModule} from "primeng/iconfield";
 import {InputIconModule} from "primeng/inputicon";
 import {InputTextModule} from "primeng/inputtext";
 import {PaginatorModule} from "primeng/paginator";
+import {collection, collectionData, Firestore} from "@angular/fire/firestore";
+import {
+    Auth,
+    GoogleAuthProvider,
+    signInWithPopup,
+    signInWithEmailAndPassword
+} from "@angular/fire/auth";
 
 @Component({
   selector: 'app-login',
@@ -33,16 +40,37 @@ export class LoginComponent {
   user = ''
   pass = ''
 
-  constructor(router: Router, http: HttpClient) {
+  firestore: Firestore = inject(Firestore);
+  angularFireAuth = inject(Auth);
 
-    http.get('assets/version.json', {})
-      .pipe( take(1) )
-      .subscribe((next: any) => this.appVersion = next.version)
+
+  constructor(router: Router,
+              http: HttpClient) {
+
 
   }
 
+
   async signIn(): Promise<void> {
-    throw new Error('Not implemented.')
+    try {
+      const userCredential = await signInWithEmailAndPassword(this.angularFireAuth, this.user, this.pass);
+      console.log("userCredential", userCredential)
+    } catch (error: any) {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      throw new Error(`Error occured: ${errorCode} - ${errorMessage}`);
+    }
+  }
+
+  async signInWithGoogle(): Promise<void> {
+    try {
+      const userCredential = await signInWithPopup(this.angularFireAuth, new GoogleAuthProvider())
+      console.log("userCredential", userCredential)
+    } catch (error: any) {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      throw new Error(`Error occured: ${errorCode} - ${errorMessage}`);
+    }
   }
 
 }
