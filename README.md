@@ -31,6 +31,7 @@ This project was designed to demonstrate:
 * Sate management using Signals
 * [PrimeNG framework][primeng-url]
 * Firebase
+* [Angular Firebase][ng-fire]
 * OAuth 2.0
 
 
@@ -75,7 +76,9 @@ User the following credentials to authenticate
 
 <!-- Markdown link & img dfn's -->
 
-[public-url]: TODO
+[public-url]: https://francisco-oliveira.web.app
+
+[ng-fire]: https://www.npmjs.com/package/@angular/fire
 
 [header-url]: github-template.png
 [header-link]: https://github.com/EliasOliveira

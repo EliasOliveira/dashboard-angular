@@ -130,3 +130,10 @@ dist
 .pnp.*
 
 .idea
+.angular
+.firebase
+
+# Firebase
+src/app/config/firebase.ts
+*-debug.log
+.runtimeconfig.json
